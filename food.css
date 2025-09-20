@@ -1,0 +1,83 @@
+body {
+    background-color: #f5f5dc;
+    font-family: 'Arial', sans-serif;
+    direction: rtl; /* اتجاه الكتابة من اليمين لليسار */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #a48775; 
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق رأس الصفحة (Header) */
+.main-header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #b7a278;
+    margin-bottom: 30px;
+}
+
+.main-header h1 {
+    color: #8b4513; 
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+.main-header p {
+    color: #ecd7c7; 
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin: 30;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #d2b48c; 
+    padding: 12px;
+    text-align: center;
+}
+
+thead th {
+    background-color: #9e7005; 
+    color: #ffffff; 
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #a59a7c;
+}
+
+tbody tr:hover {
+    background-color: #855f22; 
+}
+
+td img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover; /* لضمان أن الصورة تملأ المساحة بشكل صحيح */
+    border-radius: 5px;
+}
+
+
+.main-footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #d2b48c;
+    margin-top: 20px;
+    color: #a79d7b;
+    font-size: 0.9em;
+}

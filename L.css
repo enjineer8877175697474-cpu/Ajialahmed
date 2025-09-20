@@ -1,0 +1,132 @@
+/*
+ * CSS Reset and Basic Styles
+ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+/*
+ * Main Flexbox Container
+ */
+.contact-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+
+
+
+.side-section h2 {
+    margin-bottom: 20px;
+    color: #ecf0f1;
+}
+
+.side-section p {
+    margin-bottom: 15px;
+}
+
+.side-section .contact-info {
+    list-style: none;
+}
+
+.side-section .contact-info li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.side-section .contact-info li span:first-child {
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+/*
+ * Contact Form Section
+ */
+.form-section {
+   width:40rem;
+    background-color:rgb(210, 207, 177);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+.form-section h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    direction: rtl; /* For Arabic input */
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.submit-button {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #2980b9;
+}
+
+/*
+ * Responsive design
+ */
+@media (max-width: 768px) {
+    .contact-flex-container {
+        flex-direction: column;
+    }
+}

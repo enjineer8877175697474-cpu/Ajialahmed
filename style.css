@@ -1,0 +1,181 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f1e9; /* لون الخلفية: بيج فاتح */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #6a442a; /* لون بني داكن */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #d3a669; /* لون ذهبي */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-family: 'Times New Roman', serif;
+}
+
+nav {
+    background-color: #d3a669; /* لون ذهبي */
+    text-align: center;
+    padding: 10px 0;
+}
+#ahmed{  min-width:300px;
+  max-width:800px;
+  margin: 0 auto;
+  min-height: 200px;
+  max-height: 400px;
+  overflow: auto;
+  padding: 20px;
+  border-radius: 50px solid unset #000;
+  background-color: blueviolet;
+ }
+
+nav a {
+    color: #6a442a;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #f4f1e9;
+    color: #333;
+}
+
+.container {
+  display:grid ;
+  grid-template-columns: 1fr ;
+
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    text-align: center;
+    color: #6a442a;
+    border-bottom: 2px solid #d3a669;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.page-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4c3322;
+    color: white;
+    margin-top: 20px;
+}
+/* From Uiverse.io by Wendell47 */ 
+.button {
+    display:flexbox;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    border: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10rem;
+    transition: all 0.02s;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(63, 44, 44);
+    z-index: 0;
+    box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .button:hover {
+    background: rgb(193, 228, 248);
+    color: rgb(156, 73, 5);
+  }
+  
+  .button:active {
+    transform: scale(0.97);
+  }
+  
+  .hoverEffect {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  
+  .hoverEffect div {
+    background: rgb(222, 0, 75);
+    background: linear-gradient(
+      90deg,
+      rgb(80, 7, 31) 0%,
+      rgb(65, 31, 4) 49%,
+      rgb(2, 61, 73) 100%
+    );
+    border-radius: 40rem;
+    width: 10rem;
+    height: 10rem;
+    transition: 0.4s;
+    filter: blur(20px);
+    animation: effect infinite 3s linear;
+    opacity: 0.5;
+  }
+  
+  .button:hover .hoverEffect div {
+    width: 8rem;
+    height: 8rem;
+  }
+  .AJIAL{
+    text-align: justify;
+  }
+  
+  @keyframes effect {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @media (min-width:200px)and (max-width:220px){
+    background-color: aquamarine;
+    
+  }
+
+  

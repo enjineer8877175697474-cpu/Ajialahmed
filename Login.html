@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <style>
+    :root{
+      --primary-color:   #7cb8eb;
+      --secondary-color: #4f83d1;
+      --ink:             #1f2328;
+      --muted:           #6b7280;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    }
+
+    .login-box {
+      background: rgba(122, 121, 28, 0.15);
+      backdrop-filter: blur(12px);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(73, 51, 16, 0.25);
+      width: 350px;
+      text-align: center;
+      animation: fadeIn 0.6s ease;
+      color: #fff;
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .input-group {
+      position: relative;
+      margin: 15px 0;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 42px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .input-group i {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+    }
+
+    .login-box button {
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 16px;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .login-box button:hover {
+      background: var(--secondary-color);
+    }
+
+    .create-account {
+      margin-top: 20px;
+      cursor: pointer;
+      font-size: 15px;
+      color: #fff;
+    }
+
+    .create-account:hover {
+      text-decoration: underline;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .modal-content {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 16px;
+      width: 380px;
+      position: relative;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      text-align: center;
+      animation: slideDown 0.5s ease;
+    }
+
+    .modal-content h3 {
+      margin-bottom: 15px;
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .modal-content button {
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    #registerBtn {
+      background: var(--primary-color);
+    }
+    #registerBtn:hover {
+      background: var(--secondary-color);
+    }
+    #backToLoginBtn {
+      background: #5f4c2a;
+    }
+    #backToLoginBtn:hover {
+      background: #7f5833;
+    }
+
+    .close {
+      position: absolute;
+      top: 12px; right: 18px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #999;
+    }
+    .close:hover {
+      color: #333;
+    }
+  
+.input-group {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* يضيف ... لو النص طويل */
+}
+      
+   
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes slideDown {
+      from {transform: translateY(-30px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="architecture.html">العمارة اليمنية</a>
+    <a href="clothes.html">الأزياء التقليدية</a>
+    <a href="music.html">الموسيقى والفنون</a>
+    <a href="COUNT.html">تواصل معنا</a>
+</nav>
+
+  <div class="login-box">
+    <h2>Login</h2>
+    <div class="input-group">
+      <i class="fa-solid fa-envelope"></i>
+      <input type="email" id="email" placeholder="Email Address" required>
+    </div>
+    <div class="input-group">
+      <i class="fa-solid fa-lock"></i>
+      <input type="password" id="password" placeholder="Password" required>
+    </div>
+    <button id="loginBtn">Login</button>
+    <div class="create-account">
+      <i class="fa-solid fa-user-plus"></i> Create Account
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div class="modal" id="registerModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Create New Account</h3>
+      <input type="text" id="newName" placeholder="Full Name">
+      <input type="email" id="newEmail" placeholder="Email Address">
+      <input type="password" id="newPassword" placeholder="Password">
+      <button id="registerBtn">Register</button>
+      <button id="backToLoginBtn">Back to Login</button>
+    </div>
+  </div>
+
+  <!-- Toastr -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      toastr.options = {
+        "closeButton": true,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "timeOut": "2000"
+      };
+
+      // Fake AJAX Login
+      $("#loginBtn").click(function () {
+        let email = $("#email").val();
+        let password = $("#password").val();
+
+        if (email && password) {
+          toastr.info("Checking credentials...");
+          setTimeout(() => {
+            toastr.success("Login successful ");
+            window.location.href = "index.html";
+          }, 1000);
+        } else {
+          toastr.error("Please enter email and password");
+        }
+      });
+
+      // Open register modal
+      $(".create-account").click(function(){
+        $("#registerModal").fadeIn();
+      });
+
+      // Close modal
+      $(".close, #backToLoginBtn").click(function(){
+        $("#registerModal").fadeOut();
+        $("#newName, #newEmail, #newPassword").val("");
+      });
+
+      // Fake AJAX Register
+      $("#registerBtn").click(function () {
+        let name = $("#newName").val();
+        let email = $("#newEmail").val();
+        let password = $("#newPassword").val();
+
+        if (name && email && password) {
+          toastr.info("Creating your account...");
+          setTimeout(() => {
+            toastr.success("Account created successfully ✅");
+            $("#registerModal").fadeOut();
+            $("#newName, #newEmail, #newPassword").val("");
+          }, 1000);
+        } else {
+          toastr.error("Please fill in all fields");
+        }
+      });
+
+      // Hide modal on load
+      $("#registerModal").hide();
+    });
+  </script>
+
+</body>
+</html>
